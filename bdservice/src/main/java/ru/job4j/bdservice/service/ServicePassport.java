@@ -45,4 +45,8 @@ public class ServicePassport {
         dateend.add(Calendar.MONTH, 3);
         return passportRepository.findByDateEndBetween(datestart.getTime(), dateend.getTime());
     }
+
+    public void deleteall() {
+        passportRepository.deleteAll();
+    }
 }

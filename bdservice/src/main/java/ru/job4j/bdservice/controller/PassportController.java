@@ -47,6 +47,11 @@ public class PassportController {
         return ResponseEntity.ok().build();
     }
 
+    @DeleteMapping("/delete")
+    public ResponseEntity<Void> deleteall() {
+        this.servicePassport.deleteall();
+        return ResponseEntity.ok().build();
+    }
     @GetMapping("/find")
     public ResponseEntity<List<Passport>> findallPassport() {
         List<Passport> passports = StreamSupport.stream(servicePassport.findall()
